@@ -17,9 +17,12 @@ for i in data2013.index:
 		home = data2013.ix[i]['Opponent']
 		score = str(data2013.ix[i]['ScoreDef']) + "-" + str(data2013.ix[i]['ScoreOff'])
 	else: 
+		if(data2013.ix[i]['Site'] != 'H'): 
+			print (data2013.ix[i]['Site'])
 		home = data2013.ix[i]['TeamName']
 		away = data2013.ix[i]['Opponent']
 		score = str(data2013.ix[i]['ScoreOff']) + "-" + str(data2013.ix[i]['ScoreDef'])
+
 	data2013.loc[i, 'away'] = away
 	data2013.loc[i, 'home'] = home
 	data2013.loc[i, 'score'] = score
