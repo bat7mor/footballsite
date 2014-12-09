@@ -3,7 +3,7 @@ import simplejson
 
 data2013 = pandas.read_csv("./nfl2013stats.csv")
 
-data2013 = data2013[['Date','TeamName','ScoreOff', 'Opponent', 'ScoreDef']]
+data2013 = data2013[['Date','TeamName','ScoreOff', 'Opponent', 'ScoreDef', 'Site']]
 
 bigdata = [] 
 
