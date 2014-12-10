@@ -17,7 +17,7 @@ for i in data2013.index:
 		away = data2013.ix[i]['TeamName']
 		home = data2013.ix[i]['Opponent']
 		score = str(data2013.ix[i]['ScoreDef']) + "-" + str(data2013.ix[i]['ScoreOff'])
-		lineval = (-1.0 * float(data2013.ix[i]['Line']))
+		lineval = float(data2013.ix[i]['Line'])
 		if (lineval < 0): 
 			line = data2013.ix[i]['Opponent'] + ": " + str(lineval)
 		else: 
@@ -29,7 +29,7 @@ for i in data2013.index:
 		home = data2013.ix[i]['TeamName']
 		away = data2013.ix[i]['Opponent']
 		score = str(data2013.ix[i]['ScoreOff']) + "-" + str(data2013.ix[i]['ScoreDef'])
-		lineval = data2013.ix[i]['Line']
+		lineval = -1.0 * float(data2013.ix[i]['Line'])
 		if (lineval < 0): 
 			line = data2013.ix[i]['TeamName'] + ": " + str(lineval)
 		else: 
