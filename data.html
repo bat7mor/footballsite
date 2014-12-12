@@ -17,7 +17,8 @@
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
     <!-- CSS for datatables, modified version of the css at https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css --> 
-    <link href="./dataTablesCSS.css" rel="stylesheet">
+    <!-- <link href="./dataTablesCSS.css" rel="stylesheet"> -->
+    <link href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -80,14 +81,14 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-sm-9 col-md-12 main" style="color:#073D72">
+        <div class="col-sm-9 col-md-12 main">
           <div align="center">
-            <h2 class="sub-header" style="color:#073D72">Game Data With Our Predictions</h2>
+            <h2 class="sub-header">Game Data With Our Predictions</h2>
           </div>
 
-          <div class="table-responsive" style="color:#073D72">
+          <div class="table-responsive">
             
-            <div id='filterbox' align=center style="color:#073D72">
+            <div id='filterbox' align=center>
               <select id="homeSelect"> 
                 <option "">Filter By Home Team</option>
               </select> 
@@ -96,7 +97,7 @@
               </select> 
             </div>
 
-            <table class="table table-striped" id="results_table" style="color:#073D72">
+            <table class="table table-striped" id="results_table">
               <thead>
                 <tr>
                   <th>Date</th>
