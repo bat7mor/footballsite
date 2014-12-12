@@ -71,7 +71,7 @@ print predictcombined.head()
 for i in predictcombined.index:
 	homecity = (str(predictcombined.ix[i]['home'])).rsplit(' ', 1)[0]
 	awaycity = (str(predictcombined.ix[i]['away'])).rsplit(' ', 1)[0]
-	prediction = homecity + str(predictcombined.ix[i]['home prediction']) + " - " + awaycity + str(predictcombined.ix[i]['away prediction'])
+	prediction = homecity + " " + str(predictcombined.ix[i]['home prediction']) + " - " + awaycity + " " + str(predictcombined.ix[i]['away prediction'])
 	date = (predictcombined.ix[i]['Date']).strftime('%m/%d/%Y')
 
 	miniarr = [date, predictcombined.ix[i]['home'], predictcombined.ix[i]['away'], predictcombined.ix[i]['score'], predictcombined.ix[i]['line'], prediction]
