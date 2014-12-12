@@ -25,15 +25,16 @@ for i in predictions.index:
 			homecity = arr(len(arr))
 		if math.isnan(predictions.ix[i]['ScoreOff']): 
 			score = "Undetermined"
+			line = "Undetermined"
 		else:
 			score = homecity + " " + str(int(predictions.ix[i]['ScoreDef'])) + " - " + awaycity + " " + str(int(predictions.ix[i]['ScoreOff']))
-		awaypredict = predictions.ix[i]['PredictedScore']
-		homepredict = 0
-		lineval = float(predictions.ix[i]['Line'])
-		if (lineval < 0): 
-			line = predictions.ix[i]['Opponent'] + ": " + str(lineval)
-		else: 
-			line = predictions.ix[i]['Opponent'] + ": +" + str(lineval)
+			awaypredict = predictions.ix[i]['PredictedScore']
+			homepredict = 0
+			lineval = float(predictions.ix[i]['Line'])
+			if (lineval < 0): 
+				line = predictions.ix[i]['Opponent'] + ": " + str(lineval)
+			else: 
+				line = predictions.ix[i]['Opponent'] + ": +" + str(lineval)
 
 	else: 
 		if(predictions.ix[i]['Site'] != 'H'): 
@@ -42,17 +43,21 @@ for i in predictions.index:
 		away = predictions.ix[i]['Opponent']
 		homecity = (home).rsplit(' ', 1)[0]
 		awaycity = (away).rsplit(' ', 1)[0]
+		if (homecity == awaycity): 
+			arr = home.split(' ')
+			homecity = arr(len(arr))
 		homepredict = predictions.ix[i]['PredictedScore']
 		awaypredict = 0
 		if math.isnan(predictions.ix[i]['ScoreOff']): 
 			score = "Undetermined"
+			line = "Undetermined"
 		else: 
 			score =  homecity + " " + str(int(predictions.ix[i]['ScoreOff'])) + " - " + awaycity + " " + str(int(predictions.ix[i]['ScoreDef']))
-		lineval = -1.0 * float(predictions.ix[i]['Line'])
-		if (lineval < 0): 
-			line = predictions.ix[i]['TeamName'] + ": " + str(lineval)
-		else: 
-			line = predictions.ix[i]['TeamName'] + ": +" + str(lineval)		
+			lineval = -1.0 * float(predictions.ix[i]['Line'])
+			if (lineval < 0): 
+				line = predictions.ix[i]['TeamName'] + ": " + str(lineval)
+			else: 
+				line = predictions.ix[i]['TeamName'] + ": +" + str(lineval)		
 
 	predictions.loc[i, 'away'] = away
 	predictions.loc[i, 'home'] = home
