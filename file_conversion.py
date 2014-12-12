@@ -17,7 +17,8 @@ for i in predictions.index:
 	if (predictions.ix[i]['Site'] == 'V'):
 		away = predictions.ix[i]['TeamName']
 		home = predictions.ix[i]['Opponent']
-
+		awaypredict = predictions.ix[i]['PredictedScore']
+		homepredict = 0
 		homecity = (home).rsplit(' ', 1)[0]
 		awaycity = (away).rsplit(' ', 1)[0]
 		if (homecity == awaycity): 
@@ -28,8 +29,6 @@ for i in predictions.index:
 			line = "Undetermined"
 		else:
 			score = homecity + " " + str(int(predictions.ix[i]['ScoreDef'])) + " - " + awaycity + " " + str(int(predictions.ix[i]['ScoreOff']))
-			awaypredict = predictions.ix[i]['PredictedScore']
-			homepredict = 0
 			lineval = float(predictions.ix[i]['Line'])
 			if (lineval < 0): 
 				line = predictions.ix[i]['Opponent'] + ": " + str(lineval)
