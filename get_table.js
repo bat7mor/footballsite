@@ -40,9 +40,6 @@ $(document).ready(function() {
                             .draw();
                     } );
 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
             } );
 
         }
