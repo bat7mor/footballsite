@@ -71,64 +71,15 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="./aboutTheProject.html">About Our Project</a></li>
             <li><a href="./data.html">Our Data and Results</a></li>
-            <li><a href="./notebook.html">Notebook</a></li>
+            <li><a href="./model.html">Our Model</a></li>
             <li><a href="./screencast.html">Screencast</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <h2 align=center>Initial Exploration</h2>
-      <p>Using decision trees, we could train our data and then test it out on selected training and testing sets. From this, we could find which statistics were most important in beating the spread. </p>
-      <div class="image-container" align=center style="width:100%">
-        <img src="./variableimportance.png" align=center style="width:100%">
-      </div>
-      <br>
-      <p>Our data and analysis showed that passing and rushing stats were the most important. More specifically, being efficient with the plays a team had seemed to matter more than just having more possessions. Passing yards per attempt and rushing yards per attempt, for both offense and defense, were the major determinants in beating the line. <p> 
-      <h2 align=center>Where We Went From There</h2> 
-      <div class="image-container" align=center style="width:100%">
-        <img src="./quantityplot.png" align=center style="width:100%">
-      </div>
-      <br>
-      <p>To predict outcomes of future games, we averaged past statistics over multiple games. These plots show that averaging over the previous 12 to 14 games is the best strategy.</p>
-      <br>
-      <h2 align=center>A Model for Predicting Winners</h2>
-      <p>As we were only interested in predicting the winner of a game instead of the margin of victory, there were many models available to us. We tried Random Forests, k-Nearest Neighbors, and Support Vector Machines. We finally tried an ensemble prediction based on the majority of those three models.</p>
-      <p>
-        We expected that the Vegas lines would be more accurate than our models because the betting market can use more factors, such as injury data. In testing this, we found that our expectation was correct.
-      </p>
-      <div class="image-container" align=center style="width:100%">
-        <img src="./comparisonofaccuracy.png" align=center style="width:100%">
-      </div>
-      <p>
-        The Vegas line appears to always have a lower RMSE than the linear regression model.
-      </p>
-      <br>
-      <h2 align=center>Predicting Final Scores</h2>
-      <p> To predict final scores of games, we needed a new model, and linear regression seemed like the best bet. Just like before, we conducted a preliminary regression analysis to determine which variables might be important. From the regression analysis, we found that all of the variables are significant except for interceptions. Since interceptions has a small coefficient, it wouldn't hurt the model to leave it in. We expected our models to perform worse on the test sets than the validation sets. However, the RMSE scores on the test sets appear to be just as close to the Las Vegas RMSE scores as on the validation sets. The prediction accuracy also held steady.
+      <iframe src="http://nbviewer.ipython.org/github/bat7mor/footballsite/blob/gh-pages/FinalNotebook.ipynb" width="100%" height="1000"></iframe>
 
-      <h2 align=center>Coming up with a Betting Strategy</h2>
-      <p>
-        Although our prediction model did well, the Las Vegas closing line was slightly superior in prediction of final game outcome. This makes sense because the closing lines act as a market and as new information comes into light, the lines move. For example, an injury of a key player could turn an underdog into a clear favorite. The closing lines would take this into consideration while our model would not, thus we decided to examine historical closing lines in more detail.
-        </p>
-        <p>
-        We discovered that there is a close relationship between closing lines and difference in score, suggesting market efficiency.  The spread error also suggested an efficient market. We found that in the late 70s and early 80s, betting on the home underdog was a profitable betting strategy. Since then, this inefficiency has disappeared. However, this gave us hope that the market is not perfectly efficient and that there may be a strategy out there today. Looking at the home team vs. visiting team score difference showed that the spread distribution is correct in giving away teams higher spreads than home teams. This gave us the idea that there might still be some sort of underdog strategy. 
-        </p> 
-        <p>
-        We performed a logistic regression with dummy variables. Our regression model fit the training data with 51.4% accuracy, however when only looking at the test data where the model predicted greater than 53.5% accuracy it yielded a 57.3% success rate with a 99% confidence interval of (50.3,64.0).
-        </p>
-        <p>
-        The results were incredible; a success rate of 57.3% would prove to be a profitable betting strategy! The strategy shows that there is some inefficiency in the sports betting market, particularly with underdogs. Betting extreme underdogs shows a profitable strategy, most likely due to the public over-betting the favorite and thus giving subpar teams inefficient spreads.
-      </p>
-      <br>
-      <h4>View our model in action on 2013 and 2014 data <a href="./data.html">here.</a></h4>
-      <h4>Learn in greater detail about how we developed our model <a href="./notebook.html">here.</a></h4>
-      <br>
-      <br>
-      <br> 
-
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
