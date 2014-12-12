@@ -41,13 +41,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href=".">Football Predictions</a>
+          <a class="navbar-brand" href="\footballsite">Football Predictions</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://nbviewer.ipython.org/github/bat7mor/footballsite/blob/gh-pages/FinalNotebook.ipynb">Notebook</a></li>
             <li><a href="./screencast.html">Screencast</a></li>
-            <li><a href="./data.html">Our Data and Results</a></li>
 
           </ul>
         </div>
@@ -55,18 +54,53 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="image-container" align=center>
-        <img src="./projectLogo.png"/ style="PADDING-TOP: 50px">
-      </div>
-      <footer id="footer_overwrite"> 
-        <div class="row">
-          <div class="col-lg-12" align=center>
-            <p>Project by Greg Goldstein, Batsheva Moriarty, Ryan Osleeb, and Dan Sokol</p>  
-            <p>Contact us with any questions <a href="mailto:bmoriarty@college.harvard.edu">here</a>.</p>
-            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>.</p>
+      <div class="row">
+
+        <div class="col-sm-9 col-md-12 main">
+          <div align="center">
+            <h2 class="sub-header">Game Data With Our Predictions</h2>
+          </div>
+
+          <div class="table-responsive">
+            
+            <div id='filterbox' align=center>
+              <select id="homeSelect"> 
+                <option "">Filter By Home Team</option>
+              </select> 
+              <select id="awaySelect"> 
+                <option "">Filter By Away Team</option>
+              </select> 
+            </div>
+
+            <table class="table table-striped" id="results_table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Home Team</th>
+                  <th>Away Team</th>
+                  <th>Final Score</th>
+                  <th>Point Spread</th>
+                  <th>Our Predicted Score</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <th>Date</th>
+                  <th>Home Team</th>
+                  <th>Away Team</th>
+                  <th>Final Score</th>
+                  <th>Point Spread</th>
+                  <th>Our Predicted Score</th>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
