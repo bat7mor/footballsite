@@ -17,8 +17,12 @@ for i in predictions.index:
 	if (predictions.ix[i]['Site'] == 'V'):
 		away = predictions.ix[i]['TeamName']
 		home = predictions.ix[i]['Opponent']
+
 		homecity = (home).rsplit(' ', 1)[0]
 		awaycity = (away).rsplit(' ', 1)[0]
+		if (homecity == awaycity): 
+			arr = home.split(' ')
+			homecity = arr(len(arr))
 		if math.isnan(predictions.ix[i]['ScoreOff']): 
 			score = "Undetermined"
 		else:
