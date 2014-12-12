@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="./football.ico">
 
-    <title>Data and Results</title>
+    <title>About Our Project</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
-    <!-- CSS for datatables, modified version of the css at https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css --> 
-    <!-- <link href="./dataTablesCSS.css" rel="stylesheet"> -->
-    <link href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
+    <!-- CSS for datatables --> 
+    <link href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -52,7 +51,7 @@
         background-color: transparent;
         color: #999999;
       }
-    </style> 
+    </style>
   </head>
 
   <body>
@@ -70,62 +69,40 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="./data.html">Our Data and Results</a></li>
             <li><a href="http://nbviewer.ipython.org/github/bat7mor/footballsite/blob/gh-pages/FinalNotebook.ipynb">Notebook</a></li>
             <li><a href="./screencast.html">Screencast</a></li>
-
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-sm-9 col-md-12 main">
-          <div align="center">
-            <h2 class="sub-header">Game Data With Our Predictions</h2>
-          </div>
-
-          <div class="table-responsive">
-            
-            <div id='filterbox' align=center>
-              <select id="homeSelect"> 
-                <option "">Filter By Home Team</option>
-              </select> 
-              <select id="awaySelect"> 
-                <option "">Filter By Away Team</option>
-              </select> 
-            </div>
-
-            <table class="table table-striped" id="results_table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Home Team</th>
-                  <th>Away Team</th>
-                  <th>Final Score</th>
-                  <th>Point Spread</th>
-                  <th>Our Predicted Score</th>
-                </tr>
-              </thead>
-              
-              <tbody>
-              </tbody>
-
-              <tfoot>
-                <tr>
-                  <th>Date</th>
-                  <th>Home Team</th>
-                  <th>Away Team</th>
-                  <th>Final Score</th>
-                  <th>Point Spread</th>
-                  <th>Our Predicted Score</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+    <div class="container-fluid"  style="PADDING-TOP:50px">
+      <div class="panel panel-primary"> 
+        <div class="panel-heading" style="background-color:#073D72"> 
+          <h3 class="panel-title">Overview and Motivation</h3>
+        </div>
+        <div class="panel-body">
+          <p>As football fans intrigued by the sports betting world we wanted to take a look at the NFL and the closing lines (or spread) that Vegas sets. We wondered whether we could apply the concepts that we learned in class to predict game outcomes. Not only did we want to predict the winner of each game, but we also wanted to calculate a spread of our own for each game and see how it compares to the closing lines set by Vegas. Finally, we wondered if it was even possible to exploit the sports betting market and in our best-case scenario find a profitable betting strategy.</p>
+          <p></p>
+          <h4 class="panel-title">Sports betting closing lines (or spread)</h4>
+          <br>
+          <p>
+            NFL sports betting is a multi-billion dollar industry where avid fans, gamblers, and shrewd bettors speculate on the outcome of various games. Las Vegas provides a sports betting market to make all this happen. Gamblers can take either side of a game, though usually one team is the clear favorite. To prevent people from always betting the stronger side, Vegas odds-makers assign a number which handicaps one team and favors the other. This number is called the spread, or line, and it is usually determined by a group of professional odds-makers. How these odds-makers come up with these lines is not publically available; they may use formulas, simulations, or statistical models, or it may be entirely man-made. We set out to come up with a model of our own to predict NFL game spreads and see how it compares to the Vegas lines. We also wanted to examine the sports betting market and see if there was any inefficiency in the closing spreads that could lead to a winning betting strategy. We would first start by exploring the data to see what contributes the most to team wins. <p>
+          <h4 class="panel-title">Initial Questions</h4>
+          <br>
+          <p>
+          There were several main questions that we initially wanted to address in our project: <br>
+          <ul>
+            <li>What are the most significant statistics that contribute to the final score and winner of an NFL game?</li>
+            <li>How well do past results predict future performance, and which of those statistics are the most predictive? </li>
+            <li>How accurate are the NFL closing lines set by Vegas and the betting public? </li>
+            <li>Are there any discernable trends or bias in the closing lines? </li> 
+            <li>Can we find any inefficiency in the NFL sports betting market? </li></p>
+          </ul>
         </div>
       </div>
+      
     </div>
 
     <!-- Bootstrap core JavaScript
