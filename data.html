@@ -16,8 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
-    <!-- CSS for datatables --> 
-    <link href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
+    <!-- CSS for datatables, modified version of the css at https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css --> 
+    <link href="./dataTablesCSS.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -28,11 +28,35 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+      .navbar-custom {
+        background-color:#073D72;
+        color:#FFFFFF;
+        border-radius:0;
+      }
+
+      .navbar-custom .navbar-nav > li > a {
+        color:#fff;
+      }     
+      .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+        color: #ffffff;
+        background-color:transparent;
+      }
+      .navbar-custom .navbar-brand {
+        color:#eeeeee;
+      }
+
+      .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus { 
+        background-color: transparent;
+        color: #999999;
+      }
+    </style> 
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -56,14 +80,14 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-sm-9 col-md-12 main">
+        <div class="col-sm-9 col-md-12 main" style="color:#073D72">
           <div align="center">
-            <h2 class="sub-header">Game Data With Our Predictions</h2>
+            <h2 class="sub-header" style="color:#073D72">Game Data With Our Predictions</h2>
           </div>
 
-          <div class="table-responsive">
+          <div class="table-responsive" style="color:#073D72">
             
-            <div id='filterbox' align=center>
+            <div id='filterbox' align=center style="color:#073D72">
               <select id="homeSelect"> 
                 <option "">Filter By Home Team</option>
               </select> 
@@ -72,7 +96,7 @@
               </select> 
             </div>
 
-            <table class="table table-striped" id="results_table">
+            <table class="table table-striped" id="results_table" style="color:#073D72">
               <thead>
                 <tr>
                   <th>Date</th>
