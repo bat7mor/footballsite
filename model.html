@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="./football.ico">
 
-    <title>Data and Results</title>
+    <title>About Our Project</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
-    <!-- CSS for datatables, modified version of the css at https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css --> 
-    <!-- <link href="./dataTablesCSS.css" rel="stylesheet"> -->
-    <link href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
+    <!-- CSS for datatables --> 
+    <link href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -52,7 +51,7 @@
         background-color: transparent;
         color: #999999;
       }
-    </style> 
+    </style>
   </head>
 
   <body>
@@ -70,77 +69,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./aboutTheProject.html">About our Project</a></li>
-            <li><a href="./model.html">Our Model</a></li>
+            <li><a href="./data.html">Our Data and Results</a></li>
             <li><a href="http://nbviewer.ipython.org/github/bat7mor/footballsite/blob/gh-pages/FinalNotebook.ipynb">Notebook</a></li>
             <li><a href="./screencast.html">Screencast</a></li>
-
           </ul>
         </div>
       </div>
     </nav>
 
     <div class="container-fluid">
-      <div class="container-fluid">  
-        <br>
-        <h2 class="sub-header" align=center>About Our Data</h3>
-          <p>
-            The initial dataset we used we found at <a href="http://www.repole.com/sun4cast/data.html">repole.com</a>. The data consisted of game summaries for each year (in separate csv files) from 2000-2013 with team statistics including points scored, first downs, third-down conversion percentage, total passing yards, total rushing yards, fumbles, number of sacks, penalty yards, and time of possession. The data set also contained opening/closing lines and final scores from 1978 through 2013. We were fortunate in finding a good dataset, however since this data set did not include 2014 data and we wanted to analyze 2014 games, we scraped <a href="http://pro-football-reference.com">pro-football-reference.com</a> for 2014 game summaries and <a href="http://thefootballlines.com/">thefootballlines.com</a> for 2014 line data.
-          </p>
-          <br>
-          <p>
-            Below, you can explore the 2013 and 2014 game data, and our predicted scores for each game (including future 2014 games).
-          </p>  
-      </div>
 
-
-      <div class="row">
-
-        <div class="col-sm-9 col-md-12 main">
-          <div align="center">
-            <h2 class="sub-header">2013 and 2014 Game Data With Our Predictions</h2>
-          </div>
-
-          <div class="table-responsive">
-            
-            <div id='filterbox' align=center>
-              <select id="homeSelect"> 
-                <option "">Filter By Home Team</option>
-              </select> 
-              <select id="awaySelect"> 
-                <option "">Filter By Away Team</option>
-              </select> 
-            </div>
-
-            <table class="table table-striped" id="results_table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Home Team</th>
-                  <th>Away Team</th>
-                  <th>Final Score</th>
-                  <th>Point Spread</th>
-                  <th>Our Predicted Score</th>
-                </tr>
-              </thead>
-              
-              <tbody>
-              </tbody>
-
-              <tfoot>
-                <tr>
-                  <th>Date</th>
-                  <th>Home Team</th>
-                  <th>Away Team</th>
-                  <th>Final Score</th>
-                  <th>Point Spread</th>
-                  <th>Our Predicted Score</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
