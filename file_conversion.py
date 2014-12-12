@@ -1,5 +1,6 @@
 import pandas
 import simplejson
+import math
 
 predictions = pandas.read_csv("./predictions.csv")
 
@@ -16,7 +17,12 @@ for i in predictions.index:
 	if (predictions.ix[i]['Site'] == 'V'):
 		away = predictions.ix[i]['TeamName']
 		home = predictions.ix[i]['Opponent']
-		score = str(predictions.ix[i]['ScoreDef']) + "-" + str(predictions.ix[i]['ScoreOff'])
+		homecity = (home).rsplit(' ', 1)[0]
+		awaycity = (away).rsplit(' ', 1)[0]
+		if math.isnan(predictions.ix[i]['ScoreOff']): 
+			score = "Undetermined"
+		else:
+			score = homecity + " " + str(int(predictions.ix[i]['ScoreDef'])) + " - " + awaycity + " " + str(int(predictions.ix[i]['ScoreOff']))
 		awaypredict = predictions.ix[i]['PredictedScore']
 		homepredict = 0
 		lineval = float(predictions.ix[i]['Line'])
@@ -30,15 +36,19 @@ for i in predictions.index:
 			print (predictions.ix[i]['Site'])
 		home = predictions.ix[i]['TeamName']
 		away = predictions.ix[i]['Opponent']
+		homecity = (home).rsplit(' ', 1)[0]
+		awaycity = (away).rsplit(' ', 1)[0]
 		homepredict = predictions.ix[i]['PredictedScore']
 		awaypredict = 0
-		score = str(predictions.ix[i]['ScoreOff']) + "-" + str(predictions.ix[i]['ScoreDef'])
+		if math.isnan(predictions.ix[i]['ScoreOff']): 
+			score = "Undetermined"
+		else: 
+			score =  homecity + " " + str(int(predictions.ix[i]['ScoreOff'])) + " - " + awaycity + " " + str(int(predictions.ix[i]['ScoreDef']))
 		lineval = -1.0 * float(predictions.ix[i]['Line'])
 		if (lineval < 0): 
 			line = predictions.ix[i]['TeamName'] + ": " + str(lineval)
 		else: 
 			line = predictions.ix[i]['TeamName'] + ": +" + str(lineval)		
-
 
 	predictions.loc[i, 'away'] = away
 	predictions.loc[i, 'home'] = home
@@ -59,8 +69,12 @@ print predictcombined.head()
 
 
 for i in predictcombined.index:
-	prediction = str(predictcombined.ix[i]['home prediction']) + "-" + str(predictcombined.ix[i]['away prediction'])
-	miniarr = [str(predictcombined.ix[i]['Date']), predictcombined.ix[i]['home'], predictcombined.ix[i]['away'], predictcombined.ix[i]['score'], predictcombined.ix[i]['line'], prediction]
+	homecity = (str(predictcombined.ix[i]['home'])).rsplit(' ', 1)[0]
+	awaycity = (str(predictcombined.ix[i]['away'])).rsplit(' ', 1)[0]
+	prediction = homecity + str(predictcombined.ix[i]['home prediction']) + " - " + awaycity + str(predictcombined.ix[i]['away prediction'])
+	date = (predictcombined.ix[i]['Date']).strftime('%m/%d/%Y')
+
+	miniarr = [date, predictcombined.ix[i]['home'], predictcombined.ix[i]['away'], predictcombined.ix[i]['score'], predictcombined.ix[i]['line'], prediction]
 	bigdata.append(miniarr)
 
 #print bigdata
