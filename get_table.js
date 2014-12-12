@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#results_table').dataTable( {
         "ajax": "./gameinfo.txt", 
         "bFilter": true,
-        "columns": [ {"name": "Date", "orderable": true}, {"name": "Home Team", "orderable": true}, {"name": "Away Team", "orderable": true}, {"name": "Score", "orderable": false}, {"name": "Point Spread", "orderable": false} ] ,
+        "columns": [ {"name": "Date", "orderable": true}, {"name": "Home Team", "orderable": true}, {"name": "Away Team", "orderable": true}, {"name": "Score", "orderable": false}, {"name": "Point Spread", "orderable": false}, {"name": "Our Predicted Score", "orderable": false} ] ,
 
         //function adapted from https://datatables.net/examples/api/multi_filter_select.html
         initComplete: function() {
